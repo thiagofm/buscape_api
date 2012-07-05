@@ -1,14 +1,14 @@
-# require lib 
-require 'require_all'
-require_all 'lib/buscape_api'
-
 # require dependancies
 require 'minitest/autorun'
 require 'webmock/minitest'
 require 'vcr'
 require 'turn'
 require 'ap'
- 
+require 'require_all'
+
+# require lib 
+require_all 'lib/'
+
 Turn.config do |c|
  c.format  = :outline
  c.trace   = true

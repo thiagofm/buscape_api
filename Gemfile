@@ -9,4 +9,5 @@ group :test do
   gem 'rake'
   gem 'awesome_print'
   gem 'require_all'
+  gem 'minitest'
 end
