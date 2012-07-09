@@ -1,0 +1,47 @@
+= Buscape API
+
+== Instalation
+
+  gem install buscape_api
+
+== Usage
+
+First require the gem:
+
+  require 'buscape_api'
+
+Then instantiate the Buscape class
+
+  buscape = Buscape.new(:app_id => 'your_app_key')
+
+The Buscape class takes also two optional parameters which are *:sandbox*(should be true) and *:country_code*(check about it's usage at http://developer.buscape.com/api/)
+
+An example using all the parameters is:
+
+  buscape = Buscape.new(:app_id => 'your_app_key', :country_code => 'BR', :sandbox => true)
+
+Now you have the following methods to be used with your object:
+
+* categories
+* products
+* offers
+* top_products
+* user_ratings
+* product_details
+* seller_details
+
+After that, use the where method passing the parameters(follow http://developer.buscape.com/api/ parameters usage).
+
+===Examples:
+
+  buscape.products.where(:categoryId => 77) # Returns all products of category 77 in array/hash style.
+  
+  buscape.top_products.where(:keyword => 'Celular') # Returns all top products that is a Celular
+
+== Contributing
+
+Feel free to submit any ideas, issues or pull requests. If you have the time, write some tests/docs(should be simple) for it.
+
+=== Contributors
+
+None yet.
