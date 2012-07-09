@@ -50,4 +50,4 @@ class Product
 end
 
 b= Buscape::API.new
-b.category(15).product(19).name
+b.category(15).product(19).get
