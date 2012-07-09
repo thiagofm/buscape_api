@@ -1,1 +1,0 @@
-var search_data = {"index":{"searchIndex":["readme"],"longSearchIndex":[""],"info":[["Readme","","Readme_rdoc.html","","<p>Buscape API\n<p>Instalation\n\n<pre>gem install buscape_api</pre>\n"]]}}
