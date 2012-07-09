@@ -3,7 +3,6 @@ GEM
   specs:
     addressable (2.2.8)
     ansi (1.4.3)
-    awesome_print (1.0.2)
     crack (0.3.1)
     httparty (0.8.3)
       multi_json (~> 1.0)
@@ -24,7 +23,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
   httparty
   minitest
   rake
