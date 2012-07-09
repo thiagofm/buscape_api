@@ -34,8 +34,12 @@ After that, use the where method passing the parameters(follow http://developer.
 
 ===Examples:
 
-  buscape.products.where(:categoryId => 77) # Returns all products of category 77 in array/hash style.
+  require 'buscape_api'
   
+  buscape = Buscape.new(:app_id => '12345', :sandbox => true)
+
+  buscape.products.where(:categoryId => 77) # Returns all products of category 77 in array/hash style.
+
   buscape.top_products.where(:keyword => 'Celular') # Returns all top products that is a Celular
 
 == Contributing
