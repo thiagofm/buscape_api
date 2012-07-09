@@ -32,10 +32,10 @@ Now you have the following methods to be used with your object:
 
 After that, use the where method passing the parameters(follow http://developer.buscape.com/api/ parameters usage).
 
-===Examples:
+===Example:
 
   require 'buscape_api'
-  
+
   buscape = Buscape.new(:app_id => '12345', :sandbox => true)
 
   buscape.products.where(:categoryId => 77) # Returns all products of category 77 in array/hash style.
