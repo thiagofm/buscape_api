@@ -1,7 +1,4 @@
-require "require_all"
-
-# Loading and requiring all api files
-require_all 'buscape_api'
+require "buscape_api/base"
 
 class Buscape
   def initialize(options = {})

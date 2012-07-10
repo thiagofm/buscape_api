@@ -17,5 +17,4 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   s.add_dependency("httparty", ">= 0.8.3")
-  s.add_dependency("require_all", ">= 1.2.1")
 end
