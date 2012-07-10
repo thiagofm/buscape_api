@@ -13,7 +13,7 @@ class Base
       { :method => :offers, :service => :findOffersList, :item => :offer },
       { :method => :top_products, :service => :topProducts },
       { :method => :user_ratings, :service => :viewUserRatings },
-      { :method => :product_details, :service => :viewProductDetailst },
+      { :method => :product_details, :service => :viewProductDetails },
       { :method => :seller_details, :service => :viewSellerDetails }
     ]
     @methods = @services.map { |service| service[:method] }
