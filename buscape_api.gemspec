@@ -2,7 +2,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "buscape_api"
-  s.version     = "0.5"
+  s.version     = "0.5.1"
   s.email       = ["t@art-is-t.me"]
   s.authors     = ["Thiago Fernandes Massa"]
   s.homepage    = "http://github.com/thiagofm/buscape_api"
@@ -17,4 +17,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   s.add_dependency("httparty", ">= 0.8.3")
+  s.add_dependency("require_all", ">= 1.2.1")
 end
