@@ -1,6 +1,6 @@
 = Buscape API
 
-== Instalation
+== Installation
 
   gem install buscape_api
 
