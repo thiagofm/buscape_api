@@ -2,7 +2,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "buscape_api"
-  s.version     = "0.5.3"
+  s.version     = "0.5.4"
   s.email       = ["t@art-is-t.me"]
   s.authors     = ["Thiago Fernandes Massa"]
   s.homepage    = "http://github.com/thiagofm/buscape_api"
