@@ -10,7 +10,7 @@ class Base
     @services = [
       { :method => :categories, :service => :findCategoryList },
       { :method => :products, :service => :findProductList },
-      { :method => :offers, :service => :findOffersList, :item => :offer },
+      { :method => :offers, :service => :findOfferList, :item => :offer },
       { :method => :top_products, :service => :topProducts },
       { :method => :user_ratings, :service => :viewUserRatings },
       { :method => :product_details, :service => :viewProductDetails },
