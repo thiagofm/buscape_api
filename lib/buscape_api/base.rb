@@ -55,7 +55,7 @@ class Base
       self
     elsif method == :where
       parameterize args.first
-      response = self.class.get(@url)['Result']
+      response = self.class.get(URI::encode(@url))['Result']
     else
       raise NoMethodError
     end
