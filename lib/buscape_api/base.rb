@@ -34,6 +34,10 @@ class Base
   def set_app_id
     @url << '/' << @options[:app_id]
   end
+  
+  def set_api
+    (@url << '/' << @options[:api]) if @options[:api].present?
+  end  
 
   def select_country
     @url << '/' << @options[:country_code]
@@ -50,6 +54,7 @@ class Base
   def method_missing(method, *args)
     if @methods.include? method
       select_service method
+      set_api
       set_app_id
       select_country if @options.include? :country_code
       self
