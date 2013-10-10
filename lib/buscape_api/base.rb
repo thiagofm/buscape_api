@@ -5,7 +5,7 @@ class Base
 
   def initialize(options = {})
     raise "No :app_id set" unless options.include? :app_id
-    @format = options.fetch(:format) || 'json' # JSON is more lightweight than xml
+    options[:format] ||= 'json' # JSON is more lightweight than xml
     @options = options
     @services = [
       { :method => :categories, :service => :findCategoryList },
