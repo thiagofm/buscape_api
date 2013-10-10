@@ -31,6 +31,10 @@ class Base
     @url << '/service/' << @service.to_s
   end
 
+  def set_api
+    (@url << '/' << @options[:api]) if @options[:api].present?
+  end
+
   def set_app_id
     @url << '/' << @options[:app_id]
   end
