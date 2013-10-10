@@ -5,7 +5,7 @@ class Base
 
   def initialize(options = {})
     raise "No :app_id set" unless options.include? :app_id
-    options[:format] = 'json' # JSON is more lightweight than xml
+    @format = options.fetch(:format) || 'json' # JSON is more lightweight than xml
     @options = options
     @services = [
       { :method => :categories, :service => :findCategoryList },
@@ -19,7 +19,7 @@ class Base
     @methods = @services.map { |service| service[:method] }
     @url = base_url
   end
-  
+
   def base_url
     @options[:sandbox] ? "http://sandbox.buscape.com" : "http://bws.buscape.com"
   end
@@ -34,20 +34,23 @@ class Base
   def set_app_id
     @url << '/' << @options[:app_id]
   end
-  
+
   def set_api
     @url << '/' << @options[:api]
-  end  
+  end
 
   def select_country
     @url << '/' << @options[:country_code]
   end
- 
+
+  def set_format
+    @url << "?format=#{@options[:format]}"
+  end
+
   def parameterize(options)
     parameters = String.new
-
-    options.keys.each_with_index do |parameter,index|
-      index == 0 ? @url << "/?#{parameter}=#{options[parameter]}" : @url << "&#{parameter}=#{options[parameter]}"
+    options.keys.each do |parameter|
+      @url << "&#{parameter}=#{options[parameter]}"
     end
   end
 
@@ -57,10 +60,13 @@ class Base
       set_api if @options.include? :api
       set_app_id
       select_country if @options.include? :country_code
+      set_format
       self
     elsif method == :where
       parameterize args.first
-      response = self.class.get(URI::encode(@url))['Result']
+      response = self.class.get(URI::encode(@url))
+      return response['Result'] if @options[:format] == 'xml'
+      return response
     else
       raise NoMethodError
     end
