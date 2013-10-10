@@ -1,8 +1,9 @@
-require "buscape_api/base"
+require './buscape_api/base'
+
 
 class Buscape
   def initialize(options = {})
-    @options = options 
+    @options = options
   end
 
   def method_missing(method, *args)
