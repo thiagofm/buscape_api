@@ -1,4 +1,4 @@
-require './buscape_api/base'
+require 'buscape_api/base'
 
 
 class Buscape
