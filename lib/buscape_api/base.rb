@@ -53,8 +53,14 @@ class Base
 
   def parameterize(options)
     parameters = String.new
-    options.keys.each do |parameter|
-      @url << "&#{parameter}=#{options[parameter]}"
+    options.each_pair do |parameter, value|
+      if value.is_a?(Array)
+        value.each do |v|
+          @url << "&#{parameter}=#{v}"
+        end
+      else
+        @url << "&#{parameter}=#{value}"
+      end
     end
   end
 
